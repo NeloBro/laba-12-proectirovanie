@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>лаба 12</title>
+</head>
+<body>
+<form action="action.php" method="post">
+	<select name="animal" id="animal">
+		<option value="cat">Кот</option>
+		<option value="dog">Пёс</option>
+		<option value="horse">Конь</option>
+	</select>
+	<select name="act">
+		<option value="sound">Звук</option>
+		<option value="eat">Есть</option>
+		<option value="sleep">Спать</option>
+	</select>
+	<input type="text" name="food" placeholder="еда">
+	<input type="text" name="location" placeholder="местонахождение">
+	<input type="hidden" name="length" placeholder="длина" id="length">
+	<input type="hidden" name="weight" placeholder="вес" id="weight">
+	<input type="hidden" name="speed" placeholder="скорость" id="speed">
+	<input type="button" onclick="set()" value="доп. настойки">
+	<input type="submit" name="" value="OK">
+	<script type="text/javascript">
+		function set() {
+			document.getElementById('length').type = "hidden";
+			document.getElementById('weight').type = "hidden";
+			document.getElementById('speed').type = "hidden";
+
+			if(document.getElementById('animal').value == "cat") {
+				document.getElementById('length').type = "text";
+			}
+			else if(document.getElementById('animal').value == "dog") {
+				document.getElementById('weight').type = "text";
+			}
+			else if(document.getElementById('animal').value == "horse") {
+				document.getElementById('speed').type = "text";
+			}
+		}
+	</script>
+</form>
+</body>
+</html>
